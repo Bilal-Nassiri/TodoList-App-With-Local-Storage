@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: rgb(186, 252, 198);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+button,
+input {
+  font-family: inherit;
+}
+#userInput {
+  padding: 0.75em 1.25em;
+  outline: none;
+  border: none;
+  color: #333;
+  width: 100%;
+}
+.wrapper {
+  height: 570px;
+  background: red;
+  width: 290px;
+  background: #fff;
+  position: relative;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.25em;
+}
+.date {
+  display: flex;
+  align-items: center;
+}
+.day {
+  align-self: center;
+  margin-right: 0.2em;
+  font-size: 3rem;
+}
+.todos {
+  margin-top: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 80%;
+}
+.todos::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+.todos::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background: rgb(235, 235, 235);
+  border-radius: 50px;
+}
+
+.todos::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 50px;
+}
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  padding: 1em 1.25em;
+  margin-bottom: 0.75em;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0px);
+}
+.todoName {
+  font-weight: 800;
+}
+.remove {
+  outline: none;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 4px solid #76e9b8;
+  color: #76e9b8;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.removed {
+  background-color: #76e9b8;
+  color: #fff;
+}
+.animateToTheTrash {
+  animation: removedToTheTrash 0.75s ease-in-out forwards;
+}
+@keyframes removedToTheTrash {
+  to {
+    opacity: 0.2;
+    transform: translateY(4em);
+  }
+}
+form {
+  background: rgba(0, 0, 0, 0.452);
+  padding: 1em;
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  align-items: flex-end;
+  transition: 0.5s all ease-in-out;
+}
+.input-container {
+  height: 30%;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 3em;
+}
+form input {
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+}
+form input::-webkit-input-placeholder {
+  font-family: "Montserrat";
+}
+.add-new-todo-btn {
+  background: #50e3a4;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%) scale(1.25);
+  transform-origin: center;
+  color: #0e472f;
+  z-index: 999;
+  cursor: pointer;
+}
+.add-new-todo-btn i {
+  transition: 0.2s transform ease-in-out;
+}
+.show-form {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.rotateAddBtn {
+  transform: rotate(45deg);
+}
